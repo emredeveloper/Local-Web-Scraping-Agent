@@ -23,7 +23,7 @@ This Web Scraping AI Agent allows you to extract information from websites using
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/web-scraping-ai-agent.git
+   git clone https://github.com/emredeveloper/web-scraping-ai-agent.git
    cd web-scraping-ai-agent
    ```
 

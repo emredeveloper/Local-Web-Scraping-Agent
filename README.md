@@ -1,38 +1,105 @@
-## 💻 Web Scrapping AI Agent
-This Streamlit app allows you to scrape a website using OpenAI API and the scrapegraphai library. Simply provide your OpenAI API key, enter the URL of the website you want to scrape, and specify what you want the AI agent to extract from the website.
+# 🕵️‍♂️ Web Scraping AI Agent
 
-### Features
-- Scrape any website by providing the URL
-- Utilize OpenAI's LLMs (GPT-3.5-turbo or GPT-4) for intelligent scraping
-- Customize the scraping task by specifying what you want the AI agent to extract
+![Python](https://img.shields.io/badge/Python-3.7%2B-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.0%2B-red)
+![scrapegraphai](https://img.shields.io/badge/scrapegraphai-latest-green)
+![Playwright](https://img.shields.io/badge/Playwright-latest-orange)
 
-### How to get Started?
+An intelligent web scraping tool powered by AI, built with Streamlit and scrapegraphai. 🚀
 
-1. Clone the GitHub repository
+## 📖 Description
 
-```bash
-git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
+This Web Scraping AI Agent allows you to extract information from websites using natural language prompts. It leverages the power of large language models (like GPT-3.5 and GPT-4) to understand your requests and return relevant data from web pages.
+
+## 🌟 Features
+
+- 🔍 AI-powered web scraping
+- 💬 Natural language prompts for data extraction
+- 🌐 Support for various websites
+- 🤖 Integration with OpenAI's GPT models
+- 🖥️ User-friendly Streamlit interface
+
+## 🛠️ Installation
+
+1. Clone this repository:
+   ```
+   git clone https://github.com/yourusername/web-scraping-ai-agent.git
+   cd web-scraping-ai-agent
+   ```
+
+2. Install the required packages:
+   ```
+   pip install streamlit scrapegraphai playwright
+   ```
+
+3. Install Playwright browsers:
+   ```
+   playwright install
+   ```
+
+## 🚀 Usage
+
+1. Run the Streamlit app:
+   ```
+   streamlit run app.py
+   ```
+
+2. Open your web browser and go to the provided local URL (usually `http://localhost:8501`).
+
+3. Enter your OpenAI API key.
+
+4. Choose the AI model (GPT-3.5-turbo or GPT-4).
+
+5. Enter the URL of the website you want to scrape.
+
+6. Provide a natural language prompt describing what information you want to extract.
+
+7. Click "Scrape" and wait for the results!
+
+## 📊 Example
+
+```python
+from scrapegraphai.graphs import SmartScraperGraph
+
+graph_config = {
+    "llm": {
+        "model": "ollama/llama3.2:3b",
+        "temperature": 0,
+        "format": "json",
+        "base_url":"127.0.0.1:11434"
+    },
+    "embeddings": {
+        "model": "ollama/nomic-embed-text:v1.5",
+        "temperature": 0,
+    },
+    "verbose": True,
+}
+
+smart_scraper_graph = SmartScraperGraph(
+    prompt="List me all the titles",
+    source="https://www.wired.com/",
+    config=graph_config
+)
+
+result = smart_scraper_graph.run()
+print(result)
 ```
-2. Install the required dependencies:
 
-```bash
-pip install -r requirements.txt
-```
-3. Get your OpenAI API Key
+## 🤝 Contributing
 
-- Sign up for an [OpenAI account](https://platform.openai.com/) (or the LLM provider of your choice) and obtain your API key.
+Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/yourusername/web-scraping-ai-agent/issues).
 
-4. Run the Streamlit App
-```bash
-streamlit run ai_scrapper.py
-```
+## 📜 License
 
-### How it Works?
+This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
 
-- The app prompts you to enter your OpenAI API key, which is used to authenticate and access the OpenAI language models.
-- You can select the desired language model (GPT-3.5-turbo or GPT-4) for the scraping task.
-- Enter the URL of the website you want to scrape in the provided text input field.
-- Specify what you want the AI agent to extract from the website by entering a user prompt.
-- The app creates a SmartScraperGraph object using the provided URL, user prompt, and OpenAI configuration.
-- The SmartScraperGraph object scrapes the website and extracts the requested information using the specified language model.
-- The scraped results are displayed in the app for you to view
+## 🙏 Acknowledgements
+
+- [Streamlit](https://streamlit.io/)
+- [scrapegraphai](https://github.com/username/scrapegraphai)
+- [Playwright](https://playwright.dev/)
+- [OpenAI](https://openai.com/)
+
+---
+
+Made with ❤️ and ☕
